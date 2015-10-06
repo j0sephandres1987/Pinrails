@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+nav {
+  background: white !important; 
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(179,179,179,0.5);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(179,179,179,0.5);
+  box-shadow: 0px 2px 5px -2px rgba(179,179,179,0.5);
+}
+
+.logo {
+  margin-left: 24px;
+  font-family: 'Sonsie One', cursive;
+  color: #CF000F !important;
+  font-size: 1.4em;
+}
+
+.button {
+  background: #CF000F;  
+}
+
+.button:hover {
+  background: grey;  
+}
+
+.new-pin {
+  background: #CF000F !important;
+}
+
+.new-pin i {
+  padding-right: 5px; 
+}
+
+.has-dropdown * {
+  background: #A3A3A3 !important;  
+}
+
+body {
+  background: #F5F5F5;
+}
+
+body * {
+font-family: 'Open Sans', sans-serif;  
+}
+
+.avatar-profile {
+  border-radius: 1000px;
+  border: 5px solid lightgrey;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.event {
+  padding: 1rem 1rem 1rem 0;
+  display: table; }
+
+.event-date {
+  width: 6rem;
+  margin: 0 auto 1rem;
+  display: table-cell;
+  width: auto; }
+  .event-date .event-month {
+    margin: 0;
+    background: #eee;
+    padding: 0.5rem 2rem;
+    text-align: center; }
+  .event-date .event-day {
+    margin: 0;
+    border: 1px solid #eee;
+    padding: 0 2rem;
+    text-align: center;
+    font-size: 2rem; }
+
+.event-desc {
+  padding: 0 0 0 1rem;
+  text-align: left;
+  display: table-cell;
+  vertical-align: top; }
+  .event-desc .event-desc-header {
+    margin: 0 0 0.5rem 0;
+    padding: 0; }
+  .event-desc .event-desc-detail {
+    margin: 0 0 0.25rem;
+    padding: 0; }
+  .event-desc .event-desc-time {
+    font-weight: bold; }
+  .event-desc .rsvp.button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0; }
+
+.post-info ul li{
+  padding-top:10px;
+  margin:0;
+}
+
+.comment-info li {
+  margin:0;
+}
+
+.comment-info h5{
+  padding-left:10px;
+}
+
+.comment-container {
+  border: 1px solid lightgrey;
+  background: white;
+  padding: 10px;
+}
+
+.post-info ul li h5{
+  padding-left:10px;
+}
+
+.avatar-mini {
+  border-radius: 1000px;
+  border: 4px solid lightgrey;
+  width: 30px;
+  height: 30px;
+}
+
+.masonry-brick { 
+  width: 220px; 
+  margin: 10px; 
+  float: left;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(173,173,173,1);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(173,173,173,1);
+  box-shadow: 0px 0px 10px 3px rgba(173,173,173,1);
+  }
+#masonryContainer { width: 0 auto; }
+
+.post-info {
+  background: white;  
+}
+
+.board-form {
+    display: none;
+}
+
+.center.row {
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	max-width: 500px;
+}
+
+.signup-panel {
+  padding: 15px;
+}
+
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+}
+
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+
+.signup-panel .button {
+  margin-left: 35%;
+}
+
+section.active {
+	padding-top: 75px !important;
+}
+
+p.title {
+	border-bottom: 1px solid #cccccc !important;
+}
+
+.content{
+	height: 450px;
+}

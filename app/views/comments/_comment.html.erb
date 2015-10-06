@@ -1,0 +1,8 @@
+<li class="comment-container">
+  <ul class="inline-list comment-info">
+    <li><%= image_tag comment.user.avatar.url, :class => "avatar-mini"%></li>
+    <li><h5><%= comment.user.username%></h5></li>
+  </ul>
+  <h5 class="subheader"><%= comment.comment %></h5>
+</li>
+<br>

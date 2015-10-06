@@ -1,0 +1,29 @@
+<%= form_for @user, :url => {:action => "update", :id => @user.id}, html: { multipart: true }, :data => {:validation => true}, :builder => Judge::FormBuilder do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :full_name, "Full name" %>
+        <%= f.text_field :full_name, :validate => true, :validation => "true" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :profile_description, "About you" %>
+        <%= f.text_area :profile_description, :validate => true, :validation => "true" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :file_field, "Profile photo" %>
+        <%= f.file_field :avatar %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= submit_tag "Edit profile", :class => "button tiny" %>
+      </div>
+    </div>
+    </div>
+  </div>
+<% end %>

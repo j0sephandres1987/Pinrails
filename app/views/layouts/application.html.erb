@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <%= render "shared/new_pin_form" %>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+      <li class="name">
+        <%= link_to("Pinrails", {:controller => "posts", :action => "index"}, :class => "logo")%>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      
+      <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"><a href="#" class="new-pin" data-reveal-id="myModal"><i class="fi-plus"></i>New Pin</a></li>
+        <li class="has-dropdown">
+          <%= link_to(session[:username], {:controller => "home", :action => "index", :id => session[:user_id]})%>
+          <ul class="dropdown">
+            <li><%= link_to("Logout", {:controller => "access", :action => "logout"})%></li>
+            <li class="active"><a href="#">Active link in dropdown</a></li>
+          </ul>
+        </li>
+      </ul>
+      </section>
+      </nav>
+    </div>
+    <br><br>
+    <%= yield %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  </body>
+</html>

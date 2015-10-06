@@ -1,0 +1,4 @@
+var boardThumbContainer = "<li></li>";
+$('.board-form').slideDown('fast');
+$('.board-form').html("");
+$('.board-thumbs').append("<li><%= j(@created_board.name)%></li>");

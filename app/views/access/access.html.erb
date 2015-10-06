@@ -1,0 +1,79 @@
+<div class="center row">
+  <div class="section-container tabs" data-section="tabs">
+    <section class="active">
+      <p class="title" data-section-title><a href="#">Sign Up</a></p>
+      <div class="content" data-section-content>
+        <p>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="signup-panel">
+                <p class="welcome">Hello, new user!</p>
+                <%= form_for User.new, :url => {:action => "create_user"}, :data => {:validation => true}, :builder => Judge::FormBuilder do |f| %>
+                  <div class="row collapse">
+                    <div class="small-2  columns">
+                      <span class="prefix"><i class="fi-torso"></i></span>
+                    </div>
+                    <div class="small-10  columns">
+                      <%= f.text_field :username, :validate => true, :placeholder => "Username", :validation => "true" %>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-2 columns">
+                      <span class="prefix"><i class="fi-mail"></i></span>
+                    </div>
+                    <div class="small-10  columns">
+                      <%= f.text_field :email, :validate => true, :placeholder => "Email", :validation => "true" %>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-2 columns ">
+                      <span class="prefix"><i class="fi-lock"></i></span>
+                    </div>
+                    <div class="small-10 columns ">
+                      <%= f.password_field :password, :validate => true, :placeholder => "Password", :validation => "true" %>
+                    </div>
+                  </div>
+                  <%= submit_tag("Sign Up", :class => "button")%>
+                <% end %>
+              </div>
+            </div>
+           </div></p>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#">Sign In</a></p>
+      <div class="content" data-section-content>
+        <p>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="signup-panel">
+                <p class="welcome">Welcome back!</p>
+                <%= form_for User.new, :url => {:action => "attempt_login"}, :data => {:validation => true}, :builder => Judge::FormBuilder do |f| %>
+                  <div class="row collapse">
+                    <div class="small-2 columns">
+                      <span class="prefix"><i class="fi-mail"></i></span>
+                    </div>
+                    <div class="small-10  columns">
+                      <%= f.text_field :username, :validate => true, :placeholder => "Username", :validation => "true" %>
+                    </div>
+                  </div>
+                  <div class="row collapse">
+                    <div class="small-2 columns ">
+                      <span class="prefix"><i class="fi-lock"></i></span>
+                    </div>
+                    <div class="small-10 columns ">
+                      <%= f.password_field :password, :validate => true, :placeholder => "Password", :validation => "true" %>
+                    </div>
+                  </div>
+                  <%= submit_tag("Sign In", :class => "button")%>
+                <% end %>
+                          <%if flash[:error]%>
+            <span class="login-error"><%= flash[:error]%></span>
+          <% end %>
+              </div>
+            </div>
+           </div></p>
+      </div>
+    </section>
+  </div>
+<div>

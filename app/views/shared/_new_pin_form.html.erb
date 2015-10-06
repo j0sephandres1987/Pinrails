@@ -1,0 +1,23 @@
+<%= form_for Post.new, :url => {:controller => "posts", :action => "create_post"}, html: { multipart: true }, :data => {:remote => true, :validation => true}, :builder => Judge::FormBuilder do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title, :validate => true, :validation => "true" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :file_field, "Imagen" %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= submit_tag "Create Pin!", :class => "button tiny" %>
+      </div>
+    </div>
+    </div>
+  </div>
+<% end %>

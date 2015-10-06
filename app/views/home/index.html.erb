@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="small-12 columns">
+    <%= image_tag @user.avatar.url(:thumb), :class => "avatar-profile" %>
+    <h3><%= @user.full_name %></h3>
+    <h5><%= @user.profile_description %></h5>
+    <%= link_to("Edit profile", {:controller => "users", :action => "edit", :id => @user.id})%>
+    <hr>
+  </div>
+</div>
+<!-- Masonry Container -->
+<div class="row">
+  <div class="large-12 columns">
+    <div id="masonryContainer">
+      <% @posts.each do |p|%>
+      <div class="masonry-brick">
+        <%= link_to((image_tag p.image.url), {:controller => "posts", :action => "show_post", :id => p.id}) %>
+        <div class="post-info">
+          <ul class="inline-list">
+            <li><%= image_tag p.user.avatar.url(:thumb), :class => "avatar-mini" %></li>
+            <li><h5 class="bold"><%= User.find(p.user_id).username %></h5></li>
+          </ul>
+          <hr>
+          <h5 class="subheader"><%= p.title%></h5>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

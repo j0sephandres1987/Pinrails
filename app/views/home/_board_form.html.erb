@@ -1,0 +1,29 @@
+<%= form_for board, :url => {:action => action, :id => board.id }, :data => {:remote => true, :validation => true}, :builder => Judge::FormBuilder do |f| %>
+  <div class="row">
+    <div class="small-12 columns">
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, :validate => true, :validation => "true" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :category_id, "Category" %>
+        <%= f.collection_select :category_id, @categories, :id, :name, {}, {:prompt => "Señect a category"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= submit_tag button_label, :class => "button tiny" %>
+      </div>
+    </div>
+    </div>
+  </div>
+<% end %>
