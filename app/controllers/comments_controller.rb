@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
   def create_comment
     post = Post.find(params[:post_id])
-    @comment = Comment.new(comment_params)
+    @comment = Comment.create(comment_params)
     @comment.user_id = session[:user_id]
-    @comment.save
+    
     post.comments << @comment
     @comments = post.comments.sorted_by_date_desc
     respond_to do |format|
